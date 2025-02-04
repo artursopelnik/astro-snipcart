@@ -73,6 +73,7 @@ jobs:
           # cd astro-snipcart-shop # optional step for monorepos etc
           touch .env
           echo PUBLIC_SNIPCART_API_KEY="$PUBLIC_SNIPCART_API_KEY" >> .env
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
