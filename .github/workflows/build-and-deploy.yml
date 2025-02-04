@@ -16,18 +16,17 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site output
-        uses: withastro/action@v2
+        uses: withastro/action@v3
         with:
           path: './packages/demo-shop'
+          node-version: 22
+          package-manager: npm@latest
     deploy:
       needs: build
       runs-on: ubuntu-latest
