@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {CartItemsCount, CartTotalPrice, Product} from "@lloydjatkinson/astro-snipcart/astro";
+---
+
+<Layout>
+    <div>
+        <span>
+            Your cart contains <CartItemsCount/> items with a total of <CartTotalPrice/>.
+        </span>
+    </div>
+    <div>
+        <Product
+                name="Box of fruit"
+                price={7.99}
+                id="box-fruit">
+                <span style="color: darkblue; font-weight:bold;cursor: pointer;">
+                    Click here to add a box of fruit to your shopping bag
+                </span>
+        </Product>
+    </div>
+</Layout>

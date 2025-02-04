@@ -1,0 +1,17 @@
+{
+  "name": "demo-shop",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:ci": "BASE_PATH=/astro-snipcart/ storybook build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.2.5",
+    "@lloydjatkinson/astro-snipcart": "^0.3.0",
+    "@lloydjatkinson/astro-snipcart-design-system": "^0.3.0"
+  }
+}
