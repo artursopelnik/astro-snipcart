@@ -21,12 +21,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v3
-        with:
-          path: './packages/demo-shop'
-          node-version: 22
-          package-manager: npm@latest
+      - run: npm ci
+      - name: Build astro
+        working-directory: ./packages/demo-shop
+        run: npm ci && npm run build
     deploy:
       needs: build
       runs-on: ubuntu-latest
